@@ -6,6 +6,6 @@ class Database:
 
         def get_age(self, name):
                 self.db.query("""SELECT age FROM accounts WHERE name = '%s'""" % (name))
-                r = self.db.use_result()
-                return r.fetch_row()[0][0]
+                result = self.db.use_result()
+                return result.fetch_row()[0][0]
                 self.db.close()
