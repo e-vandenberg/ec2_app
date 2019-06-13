@@ -8,8 +8,8 @@ class Database:
         def get_age(self, name):
                 self.db.query("""SELECT age FROM accounts WHERE name = '%s'""" % (name))
                 result = self.db.use_result()
-                self.db.close()
                 return result.fetch_row()[0][0]
+                self.db.close()
 
         def new_user(self, name, age):
                 self.db.query("""INSERT INTO accounts (name, age) VALUES ('%s', '%s')""" % (name, age))
