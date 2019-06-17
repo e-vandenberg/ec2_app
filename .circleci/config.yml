@@ -19,7 +19,6 @@ jobs:
           command: |
             pip install pipenv
             pipenv install pytest
-      - run: cd venv
       - run: ls
       - run:
           name: run tests
