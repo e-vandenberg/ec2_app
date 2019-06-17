@@ -14,5 +14,5 @@ jobs:
 
     steps:
       - checkout
-      - run: pip install -U pytest
+      - run: pip install --user pytest
       - run: pytest
