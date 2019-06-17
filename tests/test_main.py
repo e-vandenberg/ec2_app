@@ -20,8 +20,6 @@ def client():
         ],
     )
 def test_math(client, num):
-    # use client somehow and test the math function
-    # (read flask docs)
     t = client.post('/math', data=dict(
         num=num
     ), follow_redirects=True)
