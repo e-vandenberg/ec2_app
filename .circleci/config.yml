@@ -20,6 +20,7 @@ jobs:
             pip install pipenv
             pipenv install pytest
             pipenv install flask
+            pipenv install MySQL-python
       - run: ls
       - run:
           name: run tests
