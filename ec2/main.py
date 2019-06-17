@@ -11,6 +11,10 @@ def home():
 def page():
     return render_template('user_form.html')
 
+@app.route('/math')
+def math():
+    return render_template('calculate.html')
+
 @app.route('/', methods=['POST'])
 def form_post():
     text = request.form['text']
@@ -24,6 +28,12 @@ def create_account():
     age = request.form['age']
     d = contact_db.Database(endpoint, user, pwd, db)
     processed_text = d.new_user(name.upper(), age.upper())
+    return processed_text
+
+@app.route('/math', methods=['POST'])
+def calculate():
+    x = request.form['num']
+    processed_text = str((int(x.upper()) * 10) + 3)
     return processed_text
 
 if __name__ == "__main__":
