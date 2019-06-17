@@ -15,11 +15,11 @@ jobs:
     steps:
       - checkout
       - run:
-        name: install dependencies
-        command: |
-          python3 -m venv venv
-          . venv/bin/activate
-          pip install pytest
+          name: install dependencies
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install pytest
       - run:
-        name: run tests
-        command: pytest
+          name: run tests
+          command: pytest
