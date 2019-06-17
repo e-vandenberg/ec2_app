@@ -21,8 +21,8 @@ jobs:
             virtualenv venv
             source venv/bin/activate
             pip install pytest
+      - run: cd venv
       - run: ls
-      - run: pwd
       - run:
           name: run tests
           command: py.test
