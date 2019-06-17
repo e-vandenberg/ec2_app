@@ -17,12 +17,10 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            sudo pip install virtualenv
-            virtualenv venv
-            source venv/bin/activate
-            pip install pytest
+            pip install pipenv
+            pipenv install pytest
       - run: cd venv
       - run: ls
       - run:
           name: run tests
-          command: py.test
+          command: pipenv run py.test
