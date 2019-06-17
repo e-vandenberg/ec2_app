@@ -17,9 +17,11 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            python3 -m venv venv
-            . venv/bin/activate
+            sudo pip install virtualenv
+            virtualenv venv
+            source venv/bin/activate
             pip install pytest
+            
       - run:
           name: run tests
           command: pytest
