@@ -19,6 +19,7 @@ jobs:
           command: |
             pip install pipenv
             pipenv install pytest
+            pipenv install flask
       - run: ls
       - run:
           name: run tests
