@@ -1,4 +1,4 @@
-import _mysql
+#import _mysql
 
 class Database:
         def __init__(self, endp, user, pwd, db):
