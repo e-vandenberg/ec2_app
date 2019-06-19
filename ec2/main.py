@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template
 import contact_db
+import config
 
 app = Flask(__name__)
 
@@ -18,7 +19,7 @@ def math():
 @app.route('/', methods=['POST'])
 def form_post():
     text = request.form['text']
-    d = contact_db.Database(endpoint, user, pwd, db)
+    d = contact_db.Database(config.endpoint, config.user, config.pwd, config.db)
     processed_text = d.get_age(text.upper())
     return processed_text
 
@@ -26,7 +27,7 @@ def form_post():
 def create_account():
     name = request.form['name']
     age = request.form['age']
-    d = contact_db.Database(endpoint, user, pwd, db)
+    d = contact_db.Database(config.endpoint, config.user, config.pwd, config.db)
     processed_text = d.new_user(name.upper(), age.upper())
     return processed_text
 
